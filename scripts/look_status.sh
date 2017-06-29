@@ -53,7 +53,7 @@ is_time_to_look() {
     fi
 
     local modulo=$(($minute % $max_num_minutes))
-    if [ $modulo = 0 ] && [ $second -lt 30 ]; then
+    if [ $modulo = 0 ] && [ $second -lt 20 ]; then
       return 0  
     else
       return 1 
