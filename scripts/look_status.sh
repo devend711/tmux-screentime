@@ -16,29 +16,29 @@ nolook_msg=""
 source $CURRENT_DIR/shared.sh
 
 is_osx() {
-	[ $(uname) == "Darwin" ]
+  [ $(uname) == "Darwin" ]
 }
 
 is_cygwin() {
-	[[ $(uname) =~ CYGWIN ]]
+  [[ $(uname) =~ CYGWIN ]]
 }
 
 default_look_string() {
-	if is_osx; then
-		echo "$look_msg_osx"
-	else
-		echo "$look_msg"
-	fi
+  if is_osx; then
+    echo "$look_msg_osx"
+  else
+    echo "$look_msg"
+  fi
 }
 
 default_nolook_string() {
-	if is_osx; then
-		echo "$nolook_msg_osx"
-	elif is_cygwin; then
-		echo "$nolook_msg_cygwin"
-	else
-		echo "$nolook_msg"
-	fi
+  if is_osx; then
+    echo "$nolook_msg_osx"
+  elif is_cygwin; then
+    echo "$nolook_msg_cygwin"
+  else
+    echo "$nolook_msg"
+  fi
 }
 
 is_time_to_look() {
@@ -65,10 +65,10 @@ is_time_to_look() {
 
 print_look_status() {
   if is_time_to_look; then
-	  printf "$(get_tmux_option "$look_string_setting_string" "$(default_look_string)")"
-	else
+    printf "$(get_tmux_option "$look_string_setting_string" "$(default_look_string)")"
+  else
     printf "$(get_tmux_option "$nolook_string_setting_string" "$(default_nolook_string)")"
-	fi
+  fi
 }
 
 main() {

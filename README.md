@@ -4,8 +4,6 @@ A [Tmux](https://github.com/tmux/tmux/wiki) plugin that tells you to take a brea
 
 Every 20 minutes, for 20 seconds, your status bar will tell you to look up
 
-![screenshot of tmux-screentime](https://user-images.githubusercontent.com/4107518/27671637-13f37dfa-5c63-11e7-8775-0aa6acaece7f.png)
-
 # How to
 
 ### Install
