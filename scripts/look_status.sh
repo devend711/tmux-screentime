@@ -6,7 +6,7 @@ look_string_setting_string="@screentime_look_string"
 nolook_string_setting_string="@screentime_nolook_string"
 interval_setting_string="@screentime_interval"
 
-default_interval=2
+default_interval=20
 look_msg_osx="👀 "
 look_msg="look up!"
 nolook_msg_osx=""
