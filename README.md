@@ -1,6 +1,6 @@
 # Tmux Screentime
 
-A Tmux plugin that tells you to take a break when you've been staring at your screen for too long
+A [Tmux](https://github.com/tmux/tmux/wiki) plugin that tells you to take a break when you've been staring at your screen for too long
 
 Every 20 minutes, for 20 seconds, your status bar will tell you to look up
 
