@@ -5,8 +5,10 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 look_string_setting_string="@screentime_look_string"
 nolook_string_setting_string="@screentime_nolook_string"
 interval_setting_string="@screentime_interval"
+show_clock_setting_string="@screentime_show_clock"
 
 default_interval=20
+default_show_clock=0
 look_msg_osx="👀 "
 look_msg="look up!"
 nolook_msg_osx=""
@@ -41,12 +43,16 @@ default_nolook_string() {
   fi
 }
 
+get_second() {
+  echo $(date | cut -d ':' -f3 | cut -d ' ' -f1)
+}
+
 is_time_to_look() {
   # is the current minute on an interval?
   # is it in the first half of the minute?
   if is_osx; then
     local minute="$(date | cut -d ':' -f2)"
-    local second=$(date | cut -d ':' -f3 | cut -d ' ' -f1)
+    second=$(get_second)
     local max_num_minutes=$(get_tmux_option "$interval_setting_string" $[default_interval])
     if [ $max_num_minutes -lt 1 ]; then
       return 1
@@ -63,9 +69,34 @@ is_time_to_look() {
   return 1 
 }
 
+is_first_update_this_minute() {
+  if is_osx; then
+    local second=$(get_second)  
+    local refresh_time=$(get_tmux_option "status-interval")
+    if [ $second -lt $refresh_time ]; then
+      return 0
+    fi
+  fi
+
+  return 1
+}
+
+is_time_to_show_clock() {
+  if $(get_tmux_option "$show_clock_option_string" "$default_show_clock_option"); then
+    if is_first_update_this_minute; then
+      return 0
+    fi
+  fi
+
+  return 1
+}
+
 print_look_status() {
   if is_time_to_look; then
     printf "$(get_tmux_option "$look_string_setting_string" "$(default_look_string)")"
+    if is_time_to_show_clock; then
+      $(tmux clock)
+    fi 
   else
     printf "$(get_tmux_option "$nolook_string_setting_string" "$(default_nolook_string)")"
   fi
