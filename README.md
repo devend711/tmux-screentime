@@ -1,6 +1,8 @@
 # Tmux Screentime
 
-A [Tmux](https://github.com/tmux/tmux/wiki) plugin that tells you to take a break when you've been staring at your screen for too long. Yes, it's a fancy alarm clock.
+A [Tmux](https://github.com/tmux/tmux/wiki) plugin that tells you to take a break when you've been staring at your screen for too long. 
+
+Yes, it's a fancy alarm clock.
 
 ![tmux-screentime screenshot](https://user-images.githubusercontent.com/4107518/27671637-13f37dfa-5c63-11e7-8775-0aa6acaece7f.png)
 
