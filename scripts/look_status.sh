@@ -82,7 +82,7 @@ is_first_update_this_minute() {
 }
 
 is_time_to_show_clock() {
-  if $(get_tmux_option "$show_clock_option_string" "$default_show_clock_option"); then
+  if $(get_tmux_option "$show_clock_setting_string" "$default_show_clock_option"); then
     if is_first_update_this_minute; then
       return 0
     fi
