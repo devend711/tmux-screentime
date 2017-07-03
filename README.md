@@ -1,6 +1,6 @@
 # Tmux Screentime
 
-A [Tmux](https://github.com/tmux/tmux/wiki) plugin that tells you to take a break when you've been staring at your screen for too long
+A [Tmux](https://github.com/tmux/tmux/wiki) plugin that tells you to take a break when you've been staring at your screen for too long. Yes, it's a fancy alarm clock.
 
 ![tmux-screentime screenshot](https://user-images.githubusercontent.com/4107518/27671637-13f37dfa-5c63-11e7-8775-0aa6acaece7f.png)
 
@@ -35,12 +35,11 @@ You can set the following options, shown here with their defaults, in your `.tmu
 ```
 set -g @screentime_look_string "👀" # what shows up in your status bar when the alarm is on
 set -g @screentime_nolook_string "" # what shows up in your status bar when the alarm is off
-set -g @screentime_interval 20 # alarm sounds every n minutes of the hour
+set -g @screentime_interval 20 # alarm sounds every n minutes on the hour
 set -g @screentime_show_clock 0 # automatically show the clock? 0 for yes, 1 for no 
 ```
 
 # DEVELOPMENT
 ### To do:
-- Document options
 - Test outside of OSX 
 - Interval count start on tmux start, not just on the hour
