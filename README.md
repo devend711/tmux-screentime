@@ -17,8 +17,8 @@ set -g @plugin 'devend711/tmux-screentime'
 And then download + source the plugin with `prefix`+ I (capital `I`, as in Install)
 
 ### Manually
-1. Clone this repo to ~/tmp
-2. Add `run-shell ~/tmp/tmux_screentime.tmux` to end of your `~/.tmux.conf`
+1. Clone this repo to ~/some_dir
+2. Add `run-shell ~/some_dir/tmux_screentime.tmux` to end of your `~/.tmux.conf`
 3. Run `tmux source-file ~/.tmux.conf`
 
 # USAGE
